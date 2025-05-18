@@ -1,0 +1,24 @@
+---
+layout: default # Use your main default layout as a base
+---
+
+<div class="project-item-layout">
+    <div class="wrapper">
+        <header class="project-header">
+            <h1>{{ page.title | escape }}</h1>
+            {% if page.date %}
+                <p class="project-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
+            {% endif %}
+        </header>
+
+        {% if page.image %}
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }} feature image" class="project-image-featured">
+        {% endif %}
+
+        <article class="project-content">
+            {{ content }}
+        </article>
+
+        <a href="{{ "/" | relative_url }}#projects" class="back-to-projects">&larr; Back to All Projects</a>
+    </div>
+</div> 

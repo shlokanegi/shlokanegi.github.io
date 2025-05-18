@@ -1,0 +1,40 @@
+- authors: "**S Negi**, SL Stenton, SI Berger, …, E Vilain, A O-Luria, E Délot, KH Miga, J Monlong, B Paten"
+  year: 2025
+  title: "Advancing long-read nanopore genome assembly and accurate variant calling for rare disease detection"
+  journal_conference: "The American Journal of Human Genetics"
+  doi_link: "https://doi.org/10.1016/j.ajhg.2025.01.002"
+  preprint_link: "https://www.medrxiv.org/content/10.1101/2024.08.22.24312327v1"
+  press_link: ""
+  code_link: "https://github.com/shlokanegi/Long_reads_rare_disease_Paper"
+  doi: "10.1016/j.ajhg.2025.01.002"
+
+- authors: "J Monlong, X Chen, H Barseghyan, WJ Rowell, **S Negi**, N Nokoff, L Mohnach, …, K Miga, PW Speiser, B Paten, E Vilain, EC Délot"
+  year: 2025
+  title: "Long-read sequencing resolves the clinically relevant CYP21A2 locus, supporting a new clinical test for Congenital Adrenal Hyperplasia"
+  journal_conference: "medRxiv"
+  doi_link: "https://doi.org/10.1101/2025.02.07.25321404"
+  preprint_link: "https://www.medrxiv.org/content/10.1101/2025.02.07.25321404v1"
+  code_link: "https://github.com/jmonlong/parakit/tree/main/paper"
+  doi: "10.1101/2025.02.07.25321404"
+
+- authors: "**S Negi**, A Chaudhuri, DN Kumar, D Dehari, S Singh, AK Agrawal"
+  year: 2022
+  title: "Nanotherapeutics in autophagy: A paradigm shift in cancer treatment"
+  journal_conference: "Drug Delivery and Translational Research"
+  doi_link: "https://doi.org/10.1007/S13346-022-01125-6"
+  doi: "10.1007/S13346-022-01125-6"
+
+- authors: "JK Tiwari, **S Negi**, M Kashyap, S Nizamuddin, A Singh, A Khattri"
+  year: 2022
+  title: "Pan-cancer analysis shows enrichment of macrophages, overexpression of checkpoint molecules, inhibitory cytokines, and immune exhaustion signatures in EMT-high tumors"
+  journal_conference: "Frontiers in Oncology"
+  doi_link: "https://doi.org/10.3389/fonc.2021.793881"
+  doi: "10.3389/fonc.2021.793881"
+
+- authors: "KJ Billingsley, M Meredith, K Daida, P Alvarez Jerez, **S Negi**, …, M Kolmogorov, M Jain, FJ Sedlazeck, B Paten, C Blauwendraat"
+  year: 2024
+  title: "Long-read sequencing of hundreds of diverse brains provides insight into the impact of structural variation on gene expression and DNA methylation"
+  journal_conference: "bioRxiv"
+  preprint_link: "https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1"
+  doi_link: "https://doi.org/10.1101/2024.12.16.628723"
+  doi: "10.1101/2024.12.16.628723"

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  {% seo %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Optional: Placeholder for favicon -->
+  <!-- <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}"> -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}"> -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}"> -->
+  <!-- <link rel="manifest" href="{{ '/assets/site.webmanifest' | relative_url }}"> -->
+
+</head>
+
+<body>
+  <div class="page-container">
+    {% include header.html %}
+
+    <main class="content-wrapper">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  <!-- Altmetric and Dimensions badge scripts -->
+  <script async src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+  <script async src='https://badge.dimensions.ai/badge.js'></script>
+</body>
+
+</html> 

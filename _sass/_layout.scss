@@ -1,0 +1,245 @@
+// Wrapper for content width control
+.wrapper {
+  max-width: calc(#{$breakpoint-lg} - 30px); // Example max-width, adjust as needed
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+// Site Header
+.site-header {
+  background-color: $background-color; // Or a specific header background
+  border-bottom: 1px solid $light-grey;
+  min-height: 56px; // Adjust as needed
+  position: sticky; // Make header sticky
+  top: 0;
+  z-index: 1020; // Ensure header is above other content
+  width: 100%; // Ensure full width when sticky
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); // Subtle shadow like jmonlong site
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; // Ensure wrapper takes full height of header
+  }
+
+  .nav-trigger {
+    display: none; // Hide checkbox by default
+  }
+
+  .nav-trigger-label {
+    display: none; // Hide label (hamburger icon container) on desktop
+    cursor: pointer;
+    // Basic styling for the hamburger icon (span.menu-icon) can go in here or its own block
+  }
+
+  .menu-icon {
+    > svg {
+      fill: $text-color;
+    }
+  }
+
+  // Mobile specific display for hamburger menu
+  @media screen and (max-width: $breakpoint-md) {
+    .nav-trigger-label {
+      display: block; // Show hamburger icon on mobile
+      position: absolute; // Or relative, depending on desired layout vs site-title
+      right: 15px;      // Adjust positioning as needed
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.site-title {
+  font-family: $base-font-family; // Changed to Open Sans
+  font-size: 1.25rem;
+  font-weight: bold; // Keep it bold
+  line-height: 56px; // Match min-height of header
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+// Site Navigation
+.site-nav {
+  .trigger {
+    // Desktop navigation links container
+    display: flex;
+    align-items: center;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-font-family; // Or match header height
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    font-weight: 400; // Default font weight for nav links (using Open Sans)
+
+    &:not(:last-child) {
+      margin-right: 5px; // Spacing between links
+    }
+
+    &:hover,
+    &:focus,
+    &.active { // Add .active class via JS or Liquid for current page
+      color: $link-color; // This is $primary-color
+      border-bottom: 2px solid $primary-color;
+      font-weight: 700; // Make active link bolder (Open Sans bold)
+    }
+  }
+
+  // Mobile navigation styles for the menu itself (not the trigger icon)
+  @media screen and (max-width: $breakpoint-md) {
+    .trigger {
+      display: none; // Hide nav links by default on mobile
+      position: absolute;
+      top: 56px; // Position below header
+      left: 0;
+      right: 0;
+      background-color: $background-color;
+      border-top: 1px solid $light-grey;
+      border-bottom: 1px solid $light-grey;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 10px 0;
+    }
+
+    // Show nav links when checkbox (sibling of .site-nav) is checked
+    // This selector assumes .nav-trigger is an immediate sibling *before* .site-nav
+    // which is true according to the header.html structure relative to .site-title
+    // The checkbox is: .site-header > .wrapper > .nav-trigger
+    // The nav is:    .site-header > .wrapper > .site-nav
+    // So we need to go up to .wrapper or use a general sibling combinator carefully.
+
+    // Corrected approach: The .nav-trigger is a sibling to .site-nav within .wrapper.
+    // So, when .nav-trigger (inside .site-header .wrapper) is checked, affect .site-nav .trigger.
+    // This means the :checked state needs to be on an element that is a SIBLING to .site-nav
+    // OR an ancestor whose state can be used to affect .site-nav.
+    // The current HTML: <input.nav-trigger /> <label.nav-trigger-label /> <nav.site-nav>
+    // So .nav-trigger:checked ~ .site-nav .trigger should work if they are siblings inside .wrapper.
+
+    // Let's re-check _includes/header.html: site-title, input, label, nav are all direct children of .wrapper
+    // So, the original :checked ~ .trigger (if .trigger was a direct sibling) is close.
+    // The .nav-trigger is a sibling of .site-nav.
+    // The .trigger is a CHILD of .site-nav.
+    // Thus, .nav-trigger:checked ~ .site-nav .trigger is the most robust selector here.
+
+    // The input.nav-trigger is defined *before* nav.site-nav in the HTML.
+    // So, the general sibling combinator `~` is appropriate.
+    // The :checked pseudo-class applies to the input.nav-trigger.
+
+    // The rules for .page-link within mobile .trigger also need to be here.
+    .page-link {
+      display: block;
+      padding: 10px 15px;
+      text-align: left;
+      border-bottom: none; // Remove desktop underline effect
+
+      &:not(:last-child) {
+        margin-right: 0;
+        border-bottom: 1px solid $light-grey; // Separator for mobile links
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $light-grey;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// This rule needs to be at a level where .nav-trigger can be a sibling to .site-nav
+// which they are, within .site-header > .wrapper.
+.site-header > .wrapper > .nav-trigger:checked ~ .site-nav .trigger {
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex; // Show nav links when checkbox is checked on mobile
+  }
+}
+
+// Site Footer
+.site-footer {
+  background-color: $light-grey; // Or a specific footer background
+  border-top: 1px solid $medium-grey;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: $dark-grey;
+  text-align: center;
+  flex-shrink: 0; // Prevent footer from shrinking (for sticky footer)
+
+  .wrapper {
+    // Additional styling for footer wrapper if needed
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $primary-color;
+    &:hover,
+    &:focus {
+      color: $link-hover-color;
+    }
+  }
+}
+
+// Adjust main content for sticky header
+.content-wrapper {
+  padding-top: 56px; // Match .site-header min-height
+}
+
+// Page Sections (for single-page scroll)
+.page-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 30px 0; // Reduced vertical padding
+  text-align: left; // Default text alignment for content within the wrapper
+  scroll-margin-top: 56px; // Offset for sticky header (adjust if header height changes)
+
+  // Updated rule for main section titles (h1 or h2)
+  .wrapper > h1,
+  .wrapper > h2 {
+    text-align: center;
+    width: 100%; // Ensure it can center properly if it's a block element
+    margin-top: 0; // Assuming it's the first major element in the wrapper for the section
+    margin-bottom: 2em; // More space after a main section title
+    font-size: 2rem; // Consistent section title size (adjust if H1 needs to be larger)
+    font-weight: 600; // Consistent with base heading styles
+    color: $primary-color; // Style section titles with primary color
+  }
+
+  // Optional: Add a top border to visually separate sections
+  // border-top: 1px solid $medium-grey;
+
+  // Optional: Alternate background colors for sections
+  &:nth-child(even) {
+    background-color: $light-grey; // Use a very light grey or alternate color
+  }
+
+  // Ensure the first section doesn't have an unnecessary top border if you enable it
+  // &:first-child {
+  //   border-top: none;
+  // }
+
+  .wrapper {
+    width: 100%; // Allow wrapper to manage content width within the full-width section
+  }
+} 

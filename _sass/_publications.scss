@@ -1,0 +1,154 @@
+// Styles for the Publications page 
+
+.publications-section {
+    .wrapper {
+        text-align: left; // Override page-section center alignment
+    }
+    .google-scholar-link {
+        margin-bottom: 2em;
+        font-size: 1.1rem;
+        i {
+            font-size: 0.8em; // Smaller external link icon
+        }
+    }
+}
+
+.publications-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.publication-entry {
+    margin-bottom: 1.25em;
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid $light-grey;
+    overflow: hidden; // Add this to contain the floated .publication-badges
+
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .publication-main-info {
+        margin-bottom: 0.75em;
+    }
+
+    .publication-authors {
+        font-size: 1rem;
+        margin-bottom: 0.25em;
+        line-height: 1.5;
+        color: $text-color;
+        strong, b { // For bolded author name
+            font-weight: 600; // Or your preferred bold weight
+            font-size: 1.05em; // Slightly larger font size for emphasis
+        }
+    }
+
+    .publication-title-journal {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $dark-grey;
+        margin-bottom: 0;
+    }
+
+    .publication-title {
+        font-weight: 600;
+        color: $link-color; // Or $text-color if you prefer non-colored titles
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            color: $link-hover-color;
+        }
+    }
+
+    .publication-journal {
+        em {
+            font-style: italic;
+        }
+    }
+
+    .publication-links {
+        margin-top: 0.5em;
+        font-size: 0.9rem;
+
+        .pub-link {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            padding: 3px 8px;
+            border: 1px solid $medium-grey;
+            border-radius: 4px;
+            color: $primary-color;
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover,
+            &:focus {
+                background-color: $primary-color;
+                color: white;
+                border-color: $primary-color;
+                text-decoration: none;
+            }
+        }
+
+        .bibtex-toggle-button {
+            cursor: pointer;
+            background-color: transparent;
+            // Inherits .pub-link styles, add overrides if needed
+        }
+    }
+
+    .bibtex-content {
+        margin-top: 1em;
+        pre {
+            background-color: lighten($light-grey, 2%);
+            border: 1px solid $medium-grey;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            white-space: pre-wrap; // Allow long lines to wrap
+            word-wrap: break-word;
+            color: $text-color;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+    }
+}
+
+.publication-badges {
+    float: right;
+    width: auto; // Let the badges determine their own width
+    margin-left: 20px; // Space between badges and text
+    margin-bottom: 10px; // Space below badges if text wraps under
+    display: flex;
+    flex-direction: column;
+    gap: 8px; // Space between the Altmetric and Dimensions badges
+    align-items: flex-end; // Align badges to the right if they have varying widths
+}
+
+.__dimensions_badge_embed__ {
+    display: inline-block; // Helps with sizing
+    line-height: 1; // May help contain height
+    position: relative; // Added as a general good practice for popup-triggering elements
+}
+
+.altmetric-embed {
+    display: inline-block; // Helps with sizing
+    line-height: 1; // May help contain height
+    position: relative; // Added as a general good practice for popup-triggering elements
+    width: auto !important;
+}
+
+.__dimensions_badge_embed__ {
+    // Try to make Dimensions badge similar height to Altmetric medium-sm
+    // The Altmetric medium-sm badge is roughly 25-30px high.
+    // The Dimensions small_rectangle_gray is often wider but similar height.
+    // We can try to constrain its width if it's too wide or its height if it's too tall.
+    // Note: The external script might override some of these.
+    max-width: 100px; // Example: constrain width
+    // You might need to inspect the rendered badge to see what dimensions it naturally takes
+    // and adjust this CSS accordingly. Forcing height can be tricky with external scripts.
+}

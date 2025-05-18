@@ -1,0 +1,145 @@
+// Styles for the Home page 
+
+.home-section {
+    padding-top: 0; // Reduce top padding for the home section specifically
+    .wrapper {
+        // The .page-section already centers content, 
+        // but you might want to override for specific layouts like two-column.
+        // For example, to make the wrapper's content align to the top for the columns:
+        // align-items: flex-start; 
+    }
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Single column on mobile by default
+    gap: 30px;
+    text-align: left; // Override page-section text-align: center
+
+    @media (min-width: $breakpoint-md) {
+        grid-template-columns: 1fr 2fr; // Two columns on medium screens and up
+        // Or, if you prefer fixed width for the left column:
+        // grid-template-columns: 300px 1fr;
+    }
+}
+
+.home-column-left,
+.home-column-right {
+    text-align: center; // Center content within the left column (pic, name, links)
+    @media (min-width: $breakpoint-md) {
+        text-align: left; // Align left on larger screens if preferred
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin-top: 0; // Reduce top margin for headings in home columns
+    }
+
+    .profile-pic-container {
+        margin-bottom: 20px;
+        display: inline-block; // To allow border-radius to make a circle on img
+    }
+
+    .profile-pic {
+        max-width: 250px; // Increased from 200px
+        border-radius: 50%; // Circular profile picture
+        border: 3px solid $light-grey;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        margin-top: 0; // Directly target h1 for no top margin
+        margin-bottom: 0.25em;
+        font-size: 2rem; // Adjust as needed
+        color: $primary-color;
+    }
+
+    .title-affiliation, .internship {
+        font-size: 1.1rem;
+        margin-bottom: 0.5em;
+        color: $text-color;
+        font-weight: normal;
+    }
+    .internship {
+        font-style: italic;
+    }
+}
+
+.social-links {
+    margin-top: 20px;
+    a {
+        font-size: 1.8rem; // Icon size
+        color: $text-color; 
+        margin: 0 10px;
+        transition: color 0.3s ease;
+
+        &:hover,
+        &:focus {
+            color: $primary-color;
+            text-decoration: none; // Keep icons clean
+        }
+    }
+}
+
+.home-column-right {
+    h2 {
+        margin-top: 0; // Directly target h2 for no top margin
+        color: $primary-color; // Keep this if it was intentional
+        font-size: 1.8rem;     // Keep this if it was intentional
+        margin-bottom: 0.75em;
+    }
+
+    h3 {
+        margin-top: 1em; // Reduced from 1.5em, adjust as needed
+        margin-bottom: 0.5em; // Keep this if it was intentional
+        font-size: 1.3rem;
+        color: darken($primary-color, 10%);
+        padding-bottom: 0.25em;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    p, ul {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1em;
+    }
+
+    ul {
+        list-style-position: outside;
+        padding-left: 20px;
+        li {
+            margin-bottom: 0.3em;
+        }
+    }
+
+    // Specific styling for Research Interests list to be multi-column
+    h3 + ul { // Targets a UL directly following an H3 (like Research Interests)
+        @media (min-width: $breakpoint-sm) { // Apply multi-column on sm screens and up
+            column-count: 2;
+            column-gap: 30px;
+        }
+        @media (min-width: $breakpoint-lg) { // Potentially 3 columns on very large screens
+            // column-count: 3; 
+        }
+        li {
+            break-inside: avoid-column; // Prevents list items from breaking across columns
+        }
+    }
+
+    // Skills display styles REMOVED
+}
+
+.icon-links-small {
+    margin-top: 1em;
+    a {
+        font-size: 1.8rem; // Increased icon size further (was 1.5rem)
+        color: $primary-color;
+        margin: 0 0.5em;
+        text-decoration: none;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+} 

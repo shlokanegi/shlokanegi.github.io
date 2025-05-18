@@ -1,0 +1,74 @@
+// Styles for the Contact page 
+
+.contact-section {
+    .wrapper {
+        // text-align is already center from .page-section
+    }
+
+    .contact-intro {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 700px; // Constrain width of intro text
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2.5em;
+        color: $text-color;
+    }
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Space between contact items
+    max-width: 500px; // Max width of the contact list itself
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; // Align text left within each item
+
+    @media (min-width: $breakpoint-sm) {
+        // Potentially arrange in two columns on wider screens if desired
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // gap: 20px 30px; // Row gap, column gap
+    }
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start; // Align icon with the first line of text if text wraps
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    a {
+        display: flex;
+        align-items: flex-start;
+        color: $text-color; // Default text color for links here
+        text-decoration: none;
+        word-break: break-all; // Break long URLs or emails nicely
+
+        &:hover,
+        &:focus {
+            color: $primary-color;
+            text-decoration: none;
+            .contact-icon {
+                color: $primary-color;
+            }
+            span {
+                text-decoration: underline; // Underline text part on hover
+            }
+        }
+    }
+
+    .contact-icon {
+        font-size: 1.5em; // Icon size relative to text
+        color: $primary-color; // Icon color
+        margin-right: 15px;
+        width: 1.5em; // Fixed width for alignment
+        text-align: center;
+        flex-shrink: 0; // Prevent icon from shrinking
+    }
+
+    span {
+        flex-grow: 1;
+    }
+}
