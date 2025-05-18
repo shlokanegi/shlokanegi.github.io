@@ -1,0 +1,127 @@
+.spotlight-section {
+  // Styles specific to the spotlight section can go here.
+  // For example, if you want a different background or padding:
+  // background-color: #f0f8ff; // AliceBlue for example
+
+  h2 + p {
+    margin-top: -2em; // Reduce space after the main section H2 (user adjusted)
+    margin-bottom: 2em; // Ensure some space before the first achievement item
+  }
+
+  .achievement-grid {
+    display: grid;
+    gap: 15px; // Reduced space between cards
+    grid-template-columns: 1fr; // 1 column on small screens
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr); // 2 columns on medium screens
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      // Keeping it to 2 columns for spotlight items as they might have more text
+      // or use 3 if preferred: grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr); // Changed to 4 columns for large screens
+    }
+  }
+
+  .achievement-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; // Reset from global justify if needed for cards
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .achievement-image {
+      width: 100%;
+      // For news articles, you might want a consistent aspect ratio/height
+      // For YouTube, the embed container handles its own aspect ratio
+      img {
+        width: 100%;
+        height: 200px; // Fixed height, adjust as needed for spotlight images
+        object-fit: cover;
+        display: block;
+        border-bottom: 1px solid $light-grey; // Separator if image is directly above text
+      }
+    }
+    
+    // If an item is a video embed and not an image
+    .youtube-embed-container {
+      width: 100%;
+      height: auto; // Let padding-bottom control height for aspect ratio
+      order: -1; // If you want video to always be on top like an image
+      border-bottom: 1px solid $light-grey; // Optional separator
+      position: relative; // Already present in original definition, ensure it is here
+      padding-bottom: 56.25%; // 16:9 aspect ratio, already present
+      height: 0; // Already present
+      overflow: hidden; // Already present
+      background: #000; // Already present
+      margin-top: 0; // Remove potential top margin if it was there
+      margin-bottom: 15px; // Added space below the video embed
+      border-radius: 0; // Remove rounding if applied here, card has it
+
+      iframe {
+        position: absolute; // Already present
+        top: 0; // Already present
+        left: 0; // Already present
+        width: 100%; // Already present
+        height: 100%; // Already present
+        border: 0; // Already present
+        max-width: 100%; // Explicitly ensure iframe scales down
+      }
+    }
+
+    .achievement-content {
+      padding: 15px; // Slightly reduced padding for smaller cards
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; // Allows button to stick to bottom
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0.3em; // Adjusted for new title size
+        font-size: 1.1rem; // Reduced title font size
+        line-height: 1.25;
+      }
+
+      .achievement-meta {
+        font-size: 0.75rem; // Slightly smaller meta
+        color: $dark-grey;
+        margin-bottom: 0.75em;
+      }
+
+      .achievement-description {
+        font-size: 0.9rem;
+        color: $text-color; // Match body text more closely
+        line-height: 1.5;
+        margin-bottom: 1em;
+        flex-grow: 1; // Pushes button to bottom
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: $primary-color;
+        color: #fff;
+        padding: 6px 10px; // Slightly smaller button
+        border-radius: 3px;
+        text-decoration: none;
+        font-size: 0.8rem; // Slightly smaller button text
+        transition: background-color 0.2s ease-in-out;
+        margin-top: auto; // Pushes to the bottom of the card content
+
+        &:hover {
+          background-color: $link-hover-color;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+} 

@@ -1,6 +1,6 @@
 // Wrapper for content width control
 .wrapper {
-  max-width: calc(#{$breakpoint-lg} - 30px); // Example max-width, adjust as needed
+  max-width: 1140px; // Adjusted for wider layout
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;

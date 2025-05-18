@@ -69,4 +69,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Function to add copy buttons to code blocks
+  function addCopyButtonsToCodeBlocks() {
+    const codeBlocks = document.querySelectorAll('pre'); // Select all <pre> elements
+
+    codeBlocks.forEach(block => {
+      const codeElement = block.querySelector('code');
+      if (!codeElement) return; // Skip if no <code> element found inside <pre>
+
+      const button = document.createElement('button');
+      button.className = 'copy-code-button';
+      button.textContent = 'Copy';
+
+      // Style button for positioning (can be enhanced in CSS)
+      block.style.position = 'relative'; // Needed for absolute positioning of the button
+      button.style.position = 'absolute';
+      button.style.top = '5px';
+      button.style.right = '5px';
+      // Add more styles via CSS class .copy-code-button
+
+      button.addEventListener('click', async () => {
+        const codeToCopy = codeElement.innerText;
+        try {
+          await navigator.clipboard.writeText(codeToCopy);
+          button.textContent = 'Copied!';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 2000); // Reset button text after 2 seconds
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+          button.textContent = 'Error'; // Indicate failure
+           setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 2000);
+        }
+      });
+
+      block.appendChild(button);
+    });
+  }
+
+  addCopyButtonsToCodeBlocks(); // Call the function to add buttons
+
 }); 

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 17px; // Increased base font size
   // font-size: 16px; // Reverted
 }
 
@@ -21,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  text-align: justify;
 }
 
 .page-container {
@@ -68,4 +70,107 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+// Code blocks and inline code styling
+// Inspired by GitHub's Markdown styling
+
+// Styling for <pre> elements (code blocks)
+pre {
+  background-color: #f6f8fa; // Light grey background
+  border: 1px solid $medium-grey; // Border, using your $medium-grey variable
+  border-radius: 6px; // Rounded corners
+  padding: 16px;
+  overflow-x: auto; // Add horizontal scroll if content overflows
+  font-size: 0.875em; // Slightly smaller font for code blocks
+  line-height: 1.45;
+  margin-bottom: 1.5em; // Space below code blocks
+
+  // Enable wrapping for long lines
+  white-space: pre-wrap;   // CSS3 standard
+  word-wrap: break-word; // Older browsers, still good for robustness
+
+  position: relative; // Ensure <pre> is a positioning context for the button
+  // Potentially add a bit more padding on the right if buttons overlap content
+  // padding-right: 60px; // Example: if button is wide
+}
+
+// Ensure code within pre uses a monospace font and has no extra background
+pre code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  background-color: transparent; // No double background
+  border: none;
+  padding: 0;
+  font-size: 1em; // Inherit font size from pre
+  color: $text-color; // Use your site's text color
+}
+
+// Styling for inline `code` elements
+// Exclude code elements that are direct children of <pre> to avoid double styling
+:not(pre) > code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  background-color: rgba($primary-color, 0.07); // Very subtle primary color background
+  color: darken($primary-color, 10%); // Darker primary color for text
+  padding: 0.2em 0.4em;
+  margin: 0 0.1em;
+  font-size: 0.875em;
+  border-radius: 3px;
+  white-space: nowrap; // Prevent inline code from wrapping
+}
+
+// If using Jekyll's Rouge highlighter, these might be helpful too
+// .highlight pre { margin-bottom: 0; } // If Rouge adds its own pre with margin
+// .highlight table td { padding: 5px; }
+// .highlight table pre { margin: 0; }
+
+// Basic Table Styling
+table {
+  width: 100%; // Make tables responsive by default
+  border-collapse: collapse;
+  margin-bottom: 1.5em; // Space below tables
+  font-size: 0.95em; // Slightly smaller font for tables to fit more info
+}
+
+th, td {
+  border: 1px solid $medium-grey; // Use your $medium-grey for borders
+  padding: 8px 10px; // Padding within cells
+  text-align: left; // Align text to the left by default
+}
+
+thead th {
+  background-color: $light-grey; // Light grey background for table headers
+  font-weight: bold; // Make header text bold
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba($light-grey, 0.5); // Subtle striping for even rows
+}
+
+tbody tr:hover {
+  background-color: rgba($primary-color, 0.05); // Slight hover effect
+}
+
+// Copy Code Button Styling
+.copy-code-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  color: $text-color;
+  background-color: $light-grey;
+  border: 1px solid $medium-grey;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    background-color: darken($light-grey, 5%);
+  }
+
+  &:active {
+    background-color: darken($light-grey, 10%);
+  }
 }

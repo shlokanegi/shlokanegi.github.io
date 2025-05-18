@@ -93,4 +93,5 @@ navigation_links:
   - { title: "Projects", section_id: "projects" }
   - { title: "Publications", section_id: "publications" }
   - { title: "Talks", section_id: "talks" }
+  - { title: "Spotlight", section_id: "spotlight" }
   - { title: "Contact", section_id: "contact" }

@@ -15,9 +15,11 @@ title: Home # Or your name, {{ site.author }}
                     <img src="{{ '/assets/images/profile_image_zoom.png' | relative_url }}" alt="{{ site.author }}" class="profile-pic">
                 </div>
                 <h1>{{ site.author }}</h1>
-                <p class="title-affiliation">PhD Candidate</p>
-                <p class="title-affiliation"><a href="https://engineering.ucsc.edu/departments/biomolecular-engineering/" target="_blank" rel="noopener noreferrer">Department of Biomolecular Engineering, UC Santa Cruz</a></p>
-                <p class="internship">Bioinformatics Intern (Summer 2025), Roche Sequencing</p>
+                <p class="title-affiliation">PhD Candidate in <a href="https://cglgenomics.ucsc.edu/" target="_blank" rel="noopener noreferrer">Computational Genomics Lab</a></p>
+                <div class="affiliations-list">
+                    <p class="affiliation-item"><a href="https://engineering.ucsc.edu/departments/biomolecular-engineering/" target="_blank" rel="noopener noreferrer">Department of Biomolecular Engineering and Bioinformatics, UC Santa Cruz</a></p>
+                    <p class="affiliation-item"><a href="https://genomics.ucsc.edu/" target="_blank" rel="noopener noreferrer">UC Santa Cruz Genomics Institute</a></p>
+                </div>
                 
                 <div class="icon-links-small">
                     <a href="mailto:{{ site.email }}" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
@@ -30,15 +32,14 @@ title: Home # Or your name, {{ site.author }}
             </div>
             <div class="home-column-right">
                 <h2>About Me</h2>
-                <p>I am a third-year Bioinformatics PhD student at UC Santa Cruz, focusing on genomic data analysis and algorithm development. Currently, I am a Bioinformatics Intern at Roche Sequencing, where I'm working on variant calling pipelines. My key interests include leveraging computational methods to understand complex biological systems and developing tools for large-scale sequencing data.</p>
+                <p>I am a third-year Bioinformatics PhD student at UC Santa Cruz, focusing on genomic data analysis and algorithm development. My key interests include leveraging computational methods to understand complex biological systems and developing tools for large-scale sequencing data.</p>
                 
                 <h3>Research Interests</h3>
                 <ul>
-                    <li>Structural Variation</li>
+                    <li>Long read sequencing</li>
+                    <li>Structural variants</li>
                     <li>Pangenomics</li>
-                    <li>Computational Genomics</li>
-                    <li>Machine Learning in Biology</li>
-                    <li>Sequencing Analysis</li>
+                    <li>Genome assembly</li>
                 </ul>
             </div>
         </div>
@@ -150,6 +151,105 @@ title: Home # Or your name, {{ site.author }}
     <!-- Placeholder for talks list or content -->
   </div>
 </section>
+
+<!-- Spotlight Section -->
+<section id="spotlight" class="page-section spotlight-section">
+  <div class="wrapper">
+    <h2>Spotlight</h2>
+    <p>Here are some highlights and features of my work and achievements.</p>
+
+    <div class="achievement-grid">
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/AJHG_GI_pic.jpg" alt="GI picture">
+        </div>
+        <div class="achievement-content">
+          <h3>Long-Read Nanopore Sequencing Improves Rare Disease Diagnosis</h3>
+          <p class="achievement-meta">Published by: Genetic Engineering and Biotechnology News | Date: January 26, 2025</p>
+          <a href="https://www.genengnews.com/topics/omics/long-read-nanopore-sequencing-improves-rare-disease-diagnosis" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/AJHG_GI_pic.jpg" alt="GI picture">
+        </div>
+        <div class="achievement-content">
+          <h3>Long read sequencing reveals more genetic information while cutting time and cost of rare disease diagnoses</h3>
+          <p class="achievement-meta">Published by: UC Santa Cruz News | Date: January 24, 2025</p>
+          <a href="https://news.ucsc.edu/2025/01/paten-ajhg-25/" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/news3.png" alt="Jagran Article Thumbnail">
+        </div>
+        <div class="achievement-content">
+          <h3>Know more about Shloka Negi, the student who received 13 medals in IIT BHU (Article in Hindi)</h3>
+          <p class="achievement-meta">Published by: Jagran | Date: October 13, 2022</p>
+          <a href="https://www.jagran.com/news/national-know-more-about-shloka-negi-iit-banaras-hindu-university-jagran-special-23143654.html" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/TOI_news_photo.png" alt="News Highlight Thumbnail">
+        </div>
+        <div class="achievement-content">
+          <h3>Shloka Negi bags 13 medals at IIT(BHU) 11th convocation</h3>
+          <p class="achievement-meta">Published by: Times of India | Date: October 11, 2022</p>
+          <a href="https://timesofindia.indiatimes.com/city/varanasi/shloka-negi-bags-13-medalsat-iitbhu-11th-convocation/articleshow/94774510.cms" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/news2.png" alt="Campusvarta Article Thumbnail">
+        </div>
+        <div class="achievement-content">
+          <h3>IIT (BHU) Varanasi conducts its 11th convocation; B.Tech student Shloka Negi bags 13 medals and awards</h3>
+          <p class="achievement-meta">Published by: Campusvarta | Date: October 11, 2022</p>
+          <a href="https://www.campusvarta.com/article/iit-bhu-varanasi-conducts-its-11th-convocation-btech-student-shloka-negi-bags-13-medals-and-awards" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="achievement-image">
+          <img src="assets/images/news1.png" alt="Free Press Journal Article Thumbnail">
+        </div>
+        <div class="achievement-content">
+          <h3>B.Tech student Shloka Negi bags 13 medals and awards</h3>
+          <p class="achievement-meta">Published by: Free Press Journal | Date: October 10, 2022</p>
+          <a href="https://www.freepressjournal.in/education/iit-bhu-varanasi-conducts-its-11th-convocation-btech-student-shloka-negi-bags-13-medals-and-awards" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
+        </div>
+      </div>
+
+    <div class="achievement-item">
+        <div class="achievement-content">
+          <h3>आईआईटीबीएचयू दीक्षांत समारोह में सबसे ज्यादा मेडल जीतने वाली|Shloka Negi</h3>
+          <p class="achievement-meta">Channel: Atv भारतवर्ष | Upload Date: October 11, 2022</p>
+          <p class="achievement-description">Interview after bagging 13 medals at IIT-BHU Convocation, 2022</p>
+          <div class="youtube-embed-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4cfnLEsRY0E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+    </div>
+
+    <div class="achievement-item">
+        <div class="achievement-content">
+          <h3>PhD In USA: STEP-BY-STEP Process & Planning</h3>
+          <p class="achievement-meta">Channel: Durdam's Catalogue | Upload Date: September 18, 2022</p>
+          <p class="achievement-description">A complete guide covering all the topics in the process of getting a PHD position in USA</p>
+          <div class="youtube-embed-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5mKjaIBQDMc" title="YouTube video: PhD In USA: STEP-BY-STEP Process & Planning (2022) | $2700/month Salary | No Masters Required" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="page-section">

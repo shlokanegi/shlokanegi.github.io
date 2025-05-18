@@ -64,6 +64,25 @@
     .internship {
         font-style: italic;
     }
+
+    .affiliations-list {
+        margin-top: 0.5em; // Space above the list
+        margin-bottom: 1em; // Space below the list
+        .affiliation-item {
+            font-size: 0.9rem; // Smaller font size
+            color: $dark-grey; // Grey color
+            margin-bottom: 0.25em; // Space between affiliation items
+            font-weight: normal;
+            a {
+                color: $dark-grey; // Inherit color for the link
+                &:hover,
+                &:focus {
+                    color: $link-hover-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .social-links {
