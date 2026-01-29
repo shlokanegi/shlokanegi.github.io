@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Styles for the Home page 
 
 .home-section {
@@ -113,7 +115,7 @@
         margin-top: 1em; // Reduced from 1.5em, adjust as needed
         margin-bottom: 0.5em; // Keep this if it was intentional
         font-size: 1.3rem;
-        color: darken($primary-color, 10%);
+        color: color.scale($primary-color, $lightness: -10%);
         padding-bottom: 0.25em;
         border-bottom: 1px solid $light-grey;
     }

@@ -111,4 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addCopyButtonsToCodeBlocks(); // Call the function to add buttons
 
+  // Ensure Altmetric badges are initialized after page load
+  // Altmetric badges should auto-initialize, but we ensure they're processed
+  window.addEventListener('load', () => {
+    // Altmetric badges auto-initialize when the script loads
+    // If badges aren't showing, trigger a manual refresh
+    const altmetricBadges = document.querySelectorAll('.altmetric-embed');
+    if (altmetricBadges.length > 0 && typeof window._altmetric_embed_init === 'function') {
+      window._altmetric_embed_init();
+    }
+  });
+
 }); 

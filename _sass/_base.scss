@@ -1,3 +1,5 @@
+@use "sass:color";
+
 html {
   box-sizing: border-box;
   font-size: 17px; // Increased base font size
@@ -110,7 +112,7 @@ pre code {
 :not(pre) > code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   background-color: rgba($primary-color, 0.07); // Very subtle primary color background
-  color: darken($primary-color, 10%); // Darker primary color for text
+  color: color.scale($primary-color, $lightness: -10%); // Darker primary color for text
   padding: 0.2em 0.4em;
   margin: 0 0.1em;
   font-size: 0.875em;
@@ -167,10 +169,10 @@ tbody tr:hover {
 
   &:hover {
     opacity: 1;
-    background-color: darken($light-grey, 5%);
+    background-color: color.scale($light-grey, $lightness: -5%);
   }
 
   &:active {
-    background-color: darken($light-grey, 10%);
+    background-color: color.scale($light-grey, $lightness: -10%);
   }
 }

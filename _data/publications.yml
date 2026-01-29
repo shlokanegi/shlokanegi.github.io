@@ -1,3 +1,22 @@
+- authors: "X Chang, A Novak, JM Eizenga, J Sirén, J Monlong, **S Negi**, ..., K Shafin, PC Chang, F Okamoto, B Paten"
+  year: 2025
+  title: "Rapid, accurate long-and short-read mapping to large pangenome graphs with vg Giraffe"
+  journal_conference: "bioRxiv"
+  doi_link: "https://doi.org/10.1101/2025.09.29.678807"
+  preprint_link: "https://www.biorxiv.org/content/10.1101/2025.09.29.678807v1"
+  press_link: ""
+  doi: "10.1101/2025.09.29.678807"
+
+
+- authors: "NF Hansen, N Dwarshuis, ... **S Negi**, ..., JM Zook, AM Phillippy"
+  year: 2025
+  title: "A complete diploid human genome benchmark for personalized genomics"
+  journal_conference: "bioRxiv"
+  doi_link: "https://doi.org/10.1101/2025.09.21.677443"
+  preprint_link: "https://www.biorxiv.org/content/10.1101/2025.09.21.677443v1"
+  press_link: ""
+  doi: "10.1101/2025.09.21.677443"
+
 - authors: "**S Negi**, SL Stenton, SI Berger, …, E Vilain, A O-Luria, E Délot, KH Miga, J Monlong, B Paten"
   year: 2025
   title: "Advancing long-read nanopore genome assembly and accurate variant calling for rare disease detection"
