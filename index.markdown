@@ -122,8 +122,8 @@ title: Home # Or your name, {{ site.author }}
                         </div>
                         <div class="publication-links">
                             {% if pub.pdf_link %}<a href="{{ pub.pdf_link }}" target="_blank" rel="noopener noreferrer" class="pub-link pdf-link">PDF</a>{% endif %}
-                            {% if pub.preprint_link %}<a href="{{ pub.preprint_link }}" target="_blank" rel="noopener noreferrer" class="pub-link preprint-link">Preprint</a>{% endif %}
                             {% if pub.code_link %}<a href="{{ pub.code_link }}" target="_blank" rel="noopener noreferrer" class="pub-link code-link">Code</a>{% endif %}
+                            {% if pub.press_link %}<a href="{{ pub.press_link }}" target="_blank" rel="noopener noreferrer" class="pub-link press-link">Press</a>{% endif %}
                             {% if pub.slides_link %}<a href="{{ pub.slides_link }}" target="_blank" rel="noopener noreferrer" class="pub-link slides-link">Slides</a>{% endif %}
                             {% if pub.bibtex %}
                                 <button class="pub-link bibtex-toggle-button" data-target="bibtex-{{ forloop.index }}">BibTeX</button>
