@@ -25,7 +25,7 @@ title: Home # Or your name, {{ site.author }}
                     <a href="mailto:{{ site.email }}" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}&hl=en" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     <a href="https://orcid.org/{{ site.orcid_id }}" aria-label="ORCID" title="ORCID"><i class="fab fa-orcid"></i></a>
                     <a href="{{ '/assets/pdf/ShlokaNegi_CV.pdf' | relative_url }}" aria-label="Download CV" title="Download CV" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
                 </div>
@@ -87,7 +87,7 @@ title: Home # Or your name, {{ site.author }}
         <h2>Publications</h2>
         <p class="google-scholar-link">
             You can also find my work on 
-            <a href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}" target="_blank" rel="noopener noreferrer">Google Scholar <i class="fas fa-external-link-alt fa-xs"></i></a>.
+            <a href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <i class="fas fa-external-link-alt fa-xs"></i></a>.
         </p>
 
         {% if site.data.publications and site.data.publications.size > 0 %}
